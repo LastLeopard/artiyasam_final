@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: var(--secondary-color, #0f172a);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--theme-color, #ff7b00);
+}
+
+.btn-admin {
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-left: auto;
+    letter-spacing: 0.5px;
+}
+
+.btn-admin:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Kategori Navigasyonu */
+.category-nav {
+    background: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+}
+
+.category-menu {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.category-item {
+    position: relative;
+}
+
+.category-link {
+    display: inline-block;
+    padding: 8px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.category-link:hover,
+.category-link.active {
+    background: var(--theme-color, #ff7b00);
+    color: white;
+}
+
+.category-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--theme-color, #ff7b00);
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Turlar */
+.section-title {
+    text-align: center;
+    margin: 60px 0 30px;
+    font-size: 36px;
+    color: var(--secondary-color, #0f172a);
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--theme-color, #ff7b00);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.tour-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.tour-card:hover img {
+    transform: scale(1.05);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--theme-color, #ff7b00);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.tour-content {
+    padding: 25px;
+}
+
+.tour-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--secondary-color, #0f172a);
+}
+
+.tour-dates {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    font-size: 13px;
+}
+
+.tour-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.tour-category {
+    font-size: 12px;
+    background: #f0f0f0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: #666;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--theme-color, #ff7b00);
+}
+
+.btn-detail {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--theme-color, #ff7b00);
+    color: var(--theme-color, #ff7b00);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.btn-detail:hover {
+    background: var(--theme-color, #ff7b00);
+    color: white;
+}
+
+/* Özellikler */
+.features {
+    background: #f9f9f9;
+    padding: 80px 0;
+    margin: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item h3 {
+    color: var(--theme-color, #ff7b00);
+    margin-bottom: 15px;
+}
+
+/* İletişim */
+.contact-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.contact-info h2 {
+    color: var(--secondary-color, #0f172a);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--theme-color, #ff7b00);
+    padding-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 20px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info i {
+    font-size: 24px;
+    color: var(--theme-color, #ff7b00);
+    width: 30px;
+}
+
+.contact-info .phone {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--theme-color, #ff7b00);
+}
+
+.map-container {
+    width: 100%;
+    min-height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color, #0f172a);
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h4 {
+    color: var(--theme-color, #ff7b00);
+    margin-bottom: 20px;
+}
+
+.footer-section p, .footer-section a {
+    color: #aaa;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section a:hover {
+    color: var(--theme-color, #ff7b00);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .nav { flex-direction: column; gap: 15px; }
+    .contact-container { grid-template-columns: 1fr; }
+    .map-container { min-height: 300px; }
+}
+
+
+
